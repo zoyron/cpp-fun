@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 struct bnode   // creating a node for the binary search
 {
@@ -64,6 +64,15 @@ cout << "the tree is empty."<<endl;
 	else
 		return max(root->right);
 }
+
+int findheight(bnode* root) // this function will  return the height of the binary search tree in the input the address of the root node should be given
+{
+if(root == NULL)
+	return -1;
+	int lh = findheight(root->left)+1; // every time adding 1 to the height when traversing through the tree from bottm left to the root node
+	int rh = findheight(root->right)+1; // // every time adding 1 to the height when traversing through the tree from bottom right to the root node
+	return max(lh,rh);
+}
 int main()
 {
 	bnode* node = NULL;
@@ -82,5 +91,6 @@ int main()
 		cout << "Not Found"<<endl;
 	cout << "the min value in the tree is : "<<min(node)<<endl;
 	cout << "the max value in the tree is : "<< max(node)<<endl;
+	cout << "the height of the binary tree is : "<< findheight(node)<<endl;
 	return 0;
 }
