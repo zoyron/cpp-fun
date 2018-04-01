@@ -52,7 +52,7 @@ cout << "the tree is empty."<<endl;
 		return min(root->left);
 }
 
-int max(bnode* root)
+int max(bnode* root)  // this function will return the maximum value from the tree.
 {
 if(root == NULL)
 {
