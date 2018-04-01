@@ -39,7 +39,31 @@ bool search(bnode* root, int data)
 		return search(root->right,data);
 }
 
+int min(bnode* root) // this function will return the minimum value in the tree
+{
+if(root == NULL)
+{
+cout << "the tree is empty."<<endl;
+	return -1;
+}
+	else if(root->left == NULL)
+		return root->value;
+	else
+		return min(root->left);
+}
 
+int max(bnode* root)
+{
+if(root == NULL)
+{
+cout << "the tree is empty."<<endl;
+	return -1;
+}
+	else if(root->right == NULL)
+		return root->value;
+	else
+		return max(root->right);
+}
 int main()
 {
 	bnode* node = NULL;
@@ -56,5 +80,7 @@ int main()
 		cout << "Found"<<endl;
 	else
 		cout << "Not Found"<<endl;
+	cout << "the min value in the tree is : "<<min(node)<<endl;
+	cout << "the max value in the tree is : "<< max(node)<<endl;
 	return 0;
 }
