@@ -65,6 +65,8 @@ cout << "the tree is empty."<<endl;
 		return max(root->right);
 }
 
+
+
 int findheight(bnode* root) // this function will  return the height of the binary search tree in the input the address of the root node should be given
 {
 if(root == NULL)
@@ -73,6 +75,40 @@ if(root == NULL)
 	int rh = findheight(root->right)+1; // // every time adding 1 to the height when traversing through the tree from bottom right to the root node
 	return max(lh,rh);
 }
+
+
+
+void preorder(bnode* root) // for preorder traversal of the tree
+{
+if(root == NULL) // base case for the recursion
+	return ;
+cout << root->data<<"   ";
+preorder(root->left);
+preorder(root->right);
+}
+
+
+void inorder(bnode* root) //  for inorder traversal of the tree. inorder traversal prints the keys of a tree in a sorted manner
+{
+if(root == NULL)
+	return;
+inorder(root->left);
+cout << root->data << "   ";
+inorder(root->right);
+}
+
+
+void postorder(bnode* root) // for postorder traversal of the tree
+{
+if(root == NULL) //base case for the recursion
+	return ;
+postorder(root->left);
+postorder(root->right);
+cout << root->data<<"   ";
+}
+
+
+
 int main()
 {
 	bnode* node = NULL;
