@@ -107,7 +107,23 @@ postorder(root->right);
 cout << root->data<<"   ";
 }
 
-
+void level(bnode* root) // a function for level order traversal of the tree
+{
+if(root == NULL) // base case for the function
+return;
+queue<bnode*> q;
+q.push(root);
+while(!q.empty())
+{
+bnode* current = q.front();
+cout << current->value<< "   ";
+if(current->left!=NULL)
+q.push(current->left);
+if(current->right!=NULL)
+q.push(current->right);
+q.pop();
+}
+}
 
 int main()
 {
@@ -128,5 +144,8 @@ int main()
 	cout << "the min value in the tree is : "<<min(node)<<endl;
 	cout << "the max value in the tree is : "<< max(node)<<endl;
 	cout << "the height of the binary tree is : "<< findheight(node)<<endl;
+	cout << "the level order traversal of the tree is : "<<endl;
+	level(node);
+	cout << endl;
 	return 0;
 }
