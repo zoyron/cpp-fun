@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-void add_middle(char arr[],char new_arr[])
+void add_middle(char arr[],int new_arr[])
 {
     new_arr[0] = arr[0];
     int k = 1;
@@ -17,7 +17,8 @@ void add_middle(char arr[],char new_arr[])
 }
 int main()
 {
-    char arr[100],new_arr[200];
+    char arr[100];
+    int new_arr[200];
     cin.getline(arr,100);
     add_middle(arr,new_arr);
     return 0;
