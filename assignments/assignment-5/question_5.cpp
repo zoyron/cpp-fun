@@ -6,12 +6,12 @@ void add_middle(char arr[],int new_arr[])
     int k = 1;
     for(int i = 1;arr[i]!='\0';i++)
     {
-        new_arr[k++] = char(int(arr[i-1]) - int(arr[i]));
+        new_arr[k++] = char(abs(int(arr[i]) - int(arr[i-1])));
         new_arr[k++] = arr[i];
     }
     for(int i = 0;new_arr[i]!='\0';i++)
     {
-        cout << new_arr[i];
+        cout << char(new_arr[i]);
     }
 
 }
